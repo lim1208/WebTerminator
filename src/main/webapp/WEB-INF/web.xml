@@ -6,16 +6,16 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-  <!--&lt;!&ndash; 设置根（应用）上下文配置文件的位置，主要用于bean装配 &ndash;&gt;-->
-  <!--<context-param>-->
-    <!--<param-name>contextConfigLocation</param-name>-->
-    <!--<param-value>/WEB-INF/spring/application-*.xml</param-value>-->
-  <!--</context-param>-->
+  <!-- 设置根（应用）上下文配置文件的位置，主要用于bean装配 -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/spring/application-*.xml</param-value>
+  </context-param>
 
-  <!--&lt;!&ndash; 注册ContextLoaderListener用于加载根上下文配置文件 &ndash;&gt;-->
-  <!--<listener>-->
-    <!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-  <!--</listener>-->
+  <!-- 注册ContextLoaderListener用于加载根上下文配置文件 -->
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
 
   <!-- 注册DispatcherServlet,主要是用于设置视图解析器等 -->
   <servlet>
