@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.scut.ibm.mapper.UserMapper">
+    <insert id="saveUser" parameterType="user" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user(userName, userAge, userAddress) VALUES (#{username}, #{age}, #{address})
+    </insert>
+
+    <select id="selectUser" parameterType="int" resultType="user">
+        SELECT * FROM user WHERE id = #{id}
+    </select>
+
+    <resultMap id="userResultMap" type="edu.scut.ibm.bean.User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="age" column="userAge"></result>
+        <result property="address" column="userAddress"></result>
+    </resultMap>
+    <select id="selectAllUser" resultMap="userResultMap">
+        SELECT * FROM user
+    </select>
+
+    <select id="selectUserById" resultType="user">
+        SELECT * FROM user WHERE
+        <if test="id != null">
+            id = #{id}
+        </if>
+    </select>
+
+    <update id="modifyUser" parameterType="user">
+        UPDATE user SET userName = #{username}, userAge = #{age}, userAddress = #{address} WHERE id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+</mapper>

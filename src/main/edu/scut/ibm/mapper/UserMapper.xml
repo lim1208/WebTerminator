@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<mapper namespace="edu.scut.ibm.mapper.UserMapper">
-    <insert id="save" parameterType="edu.scut.ibm.bean.User" useGeneratedKeys="true">
-        INSERT INTO user(userName, userAge, userAddress) VALUES (#{username}, #{age}, #{address})
-    </insert>
-</mapper>

@@ -2,6 +2,10 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+    <typeAliases>
+        <typeAlias type="edu.scut.ibm.bean.User" alias="user"></typeAlias>
+    </typeAliases>
+
     <environments default="mysql">
         <environment id="mysql">
             <transactionManager type="JDBC"></transactionManager>
@@ -15,6 +19,7 @@
     </environments>
 
     <mappers>
-        <mapper resource="edu/scut/ibm/mapper/UserMapper.xml"></mapper>
+        <!--<mapper resource="edu/scut/ibm/mapUserMapper_default.xml.xml"></mapper>-->
+        <mapper class="edu.scut.ibm.mapper.UserMapper"></mapper>
     </mappers>
 </configuration>

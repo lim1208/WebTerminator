@@ -4,6 +4,7 @@ package edu.scut.ibm.bean;
  * Created by limin on 2017/7/9.
  */
 public class User {
+    private int id;
     private String username;
     private int age;
     private String address;
@@ -38,5 +39,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
