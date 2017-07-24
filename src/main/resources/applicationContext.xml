@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/spring-context-4.2.xsd
+                http://www.springframework.org/schema/mvc
+                http://www.springframework.org/schema/spring-mvc-4.2.xsd
+                http://www.springframework.org/schema/tx
+                http://www.springframework.org/schema/spring-tx-4.2.xsd
+                http://mybatis.org/schema/mybatis-spring
+                http://mybatis.org/schema/mybatis-spring.xsd">
+    <mybatis:scan base-package="edu.scut.ibm.dao"/>
+    <context:property-override location="classpath:db.properties"></context:property-override>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"></bean>
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" p:dataSource-ref="dataSource"></bean>
+</beans>

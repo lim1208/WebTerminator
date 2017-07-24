@@ -3,6 +3,7 @@ package edu.scut.ibm.bean;
 /**
  * Created by limin on 2017/7/9.
  */
+@Deprecated
 public class User {
     private int id;
     private String username;
